@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranger Pickleball — Privacy Policy</title>
+  <style>
+    :root {
+      --accent: #16A34A;
+      --text:   #111827;
+      --muted:  #6B7280;
+      --sub:    #F9FAFB;
+      --border: #E5E7EB;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --text:#F3F4F6; --muted:#9CA3AF; --sub:#1F2937; --border:#374151; }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text);
+      background: #ffffff;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 52px 24px 96px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 44px;
+    }
+    .bmark {
+      width: 30px; height: 30px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 900; color: #fff;
+      flex-shrink: 0;
+    }
+    .bname { font-size: 17px; font-weight: 700; color: var(--accent); }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .updated {
+      display: inline-block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 44px;
+      margin-bottom: 12px;
+    }
+
+    p { margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+    strong { font-weight: 700; }
+
+    ul { padding-left: 18px; margin-bottom: 14px; }
+    li { margin-bottom: 5px; }
+
+    .callout {
+      background: var(--sub);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 18px 0;
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0 0; }
+
+    .contact {
+      margin-top: 44px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 26px;
+    }
+    .contact h2 { margin-top: 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 0.875em;
+      background: var(--sub);
+      border-radius: 4px;
+      padding: 1px 6px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="brand">
+  <div class="bmark">S</div>
+  <span class="bname">Stranger Pickleball</span>
+</div>
+
+<h1>Privacy Policy</h1>
+<span class="updated">Last updated: 12 August 2026</span>
+
+<p>Stranger Pickleball is a matchmaking app that lets hosts post open pickleball sessions and lets nearby players claim or get invited to open slots. This policy describes what information the app collects, why, and how it is handled.</p>
+
+<hr>
+
+<h2>1 · Information We Collect</h2>
+
+<p><strong>Account &amp; profile</strong></p>
+<ul>
+  <li>Email address and display name, via Firebase Authentication (email/password or Google Sign-In)</li>
+  <li>Profile details you choose to add: gender/composition preference, skill level, and an optional profile photo</li>
+</ul>
+
+<p><strong>Location</strong></p>
+<ul>
+  <li>Approximate location (via device GPS, coarse and fine) is used to detect your general area and to show nearby sessions and players. We store a coarse geohash of your area, not a precise continuously-tracked location — location is read when you open the app or create/search a session, not in the background.</li>
+</ul>
+
+<p><strong>Session &amp; activity data</strong></p>
+<ul>
+  <li>Sessions you host or join: venue, date/time, cost, composition, and slot claims</li>
+  <li>Invitations sent and received between hosts and players</li>
+  <li>Attendance records (hosted / completed / no-show) used to calculate your reliability rating — a factual, non-skill-based score visible to other users</li>
+</ul>
+
+<p><strong>Device &amp; notifications</strong></p>
+<ul>
+  <li>A push-notification token (Firebase Cloud Messaging) so we can notify you of invitations and session updates</li>
+</ul>
+
+<h2>2 · What We Do Not Collect</h2>
+<ul>
+  <li>Payment card details — the app does not process payments; any session cost is settled directly between players and hosts, outside the app</li>
+  <li>Precise continuous background location tracking</li>
+  <li>Skill-based ratings or performance scores — reliability ratings are based only on attendance facts (hosted / completed / no-show)</li>
+</ul>
+
+<h2>3 · How Your Data Is Used</h2>
+<ul>
+  <li>To match you with nearby sessions and players, and to operate the claim/invite workflow</li>
+  <li>To calculate and display reliability ratings. These counters are written only by server-side Cloud Functions — never directly by any user's device — to keep them trustworthy</li>
+  <li>To send you push notifications about invitations, claims, and session changes</li>
+</ul>
+
+<h2>4 · Advertising &amp; Monetization</h2>
+<p>Stranger Pickleball is free to use. Advertising and an optional ad-free subscription are planned but <strong>not yet active</strong> in the current release. This policy will be updated with details of the advertising provider (Google AdMob) and billing provider (Google Play Billing) before either is enabled, and the "Last updated" date above will change accordingly.</p>
+
+<h2>5 · Third-Party Services</h2>
+<p>The app integrates the following third-party services, each governed by its own privacy policy:</p>
+<ul>
+  <li><strong>Firebase</strong> (Authentication, Firestore database, Cloud Functions, Cloud Messaging) — <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></li>
+  <li><strong>Google Sign-In</strong> — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+</ul>
+
+<h2>6 · Data Sharing Between Users</h2>
+<p>Your display name, profile photo, composition/skill info, and reliability rating are visible to other users you interact with through sessions and invitations — this is core to how the app works. We do not sell your data or share it with third parties for advertising purposes.</p>
+
+<h2>7 · Data Retention &amp; Deletion</h2>
+<p>Your account and associated data are retained while your account is active. You can request deletion of your account and all associated data at any time by contacting us using the details in Section 9; we will complete deletion within 30 days.</p>
+
+<h2>8 · Data Security</h2>
+<p>Data is stored in Google Firebase (Firestore) and protected by security rules that restrict reads/writes to authorized users. Reliability counters are protected against direct client modification and can only be updated by trusted server-side Cloud Functions.</p>
+
+<h2>9 · Changes to This Policy</h2>
+<p>We may revise this policy from time to time. The current version is always available at this URL. Material changes will be noted by updating the date at the top of the page.</p>
+
+<div class="contact">
+  <h2>Contact &amp; Deletion Requests</h2>
+  <p>For privacy questions, access requests, or data deletion requests, please email:</p>
+  <p style="margin-top:10px"><a href="mailto:tripexsupport@gmail.com"><strong>tripexsupport@gmail.com</strong></a></p>
+  <p style="margin-top:12px;font-size:13.5px;color:var(--muted)">We aim to respond to all privacy enquiries within 5 business days.</p>
+</div>
+
+</body>
+</html>
