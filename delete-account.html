@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranger Pickleball — Delete Your Account</title>
+  <style>
+    :root {
+      --accent: #16A34A;
+      --text:   #111827;
+      --muted:  #6B7280;
+      --sub:    #F9FAFB;
+      --border: #E5E7EB;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --text:#F3F4F6; --muted:#9CA3AF; --sub:#1F2937; --border:#374151; }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text);
+      background: #ffffff;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 52px 24px 96px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 44px;
+    }
+    .bmark {
+      width: 30px; height: 30px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 900; color: #fff;
+      flex-shrink: 0;
+    }
+    .bname { font-size: 17px; font-weight: 700; color: var(--accent); }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .updated {
+      display: inline-block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 44px;
+      margin-bottom: 12px;
+    }
+
+    p { margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+    strong { font-weight: 700; }
+
+    ol, ul { padding-left: 20px; margin-bottom: 14px; }
+    li { margin-bottom: 8px; }
+
+    .callout {
+      background: var(--sub);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 18px 0;
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 20px;
+      font-size: 14.5px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th { color: var(--muted); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0 0; }
+
+    .contact {
+      margin-top: 44px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 26px;
+    }
+    .contact h2 { margin-top: 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 0.875em;
+      background: var(--sub);
+      border-radius: 4px;
+      padding: 1px 6px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="brand">
+  <div class="bmark">S</div>
+  <span class="bname">Stranger Pickleball</span>
+</div>
+
+<h1>Delete Your Account</h1>
+<span class="updated">Last updated: 14 August 2026</span>
+
+<p>This page explains how to request deletion of your Stranger Pickleball account and the data associated with it, published by Tripex.</p>
+
+<hr>
+
+<h2>How to Request Deletion</h2>
+
+<ol>
+  <li>Send an email to <a href="mailto:tripexsupport@gmail.com"><strong>tripexsupport@gmail.com</strong></a> from the email address linked to your account (or your Google account email, if you signed in with Google).</li>
+  <li>Use the subject line <strong>"Delete my account"</strong>.</li>
+  <li>Include the display name shown on your profile so we can locate the correct account.</li>
+</ol>
+
+<div class="callout">
+  We aim to confirm your request within 5 business days and complete deletion within 30 days, as described in our <a href="index.html">Privacy Policy</a>.
+</div>
+
+<h2>What Gets Deleted</h2>
+
+<table>
+  <tr><th>Data</th><th>Outcome</th></tr>
+  <tr><td>Account credentials (email, Google sign-in link)</td><td>Deleted</td></tr>
+  <tr><td>Profile (display name, photo, composition/skill preference)</td><td>Deleted</td></tr>
+  <tr><td>Sessions you hosted or joined, and slot claims</td><td>Deleted</td></tr>
+  <tr><td>Invitations you sent or received</td><td>Deleted</td></tr>
+  <tr><td>Your attendance records and reliability rating</td><td>Deleted</td></tr>
+  <tr><td>Push notification token</td><td>Deleted</td></tr>
+</table>
+
+<h2>What May Be Retained, and For How Long</h2>
+
+<p>Attendance facts you contributed to <strong>other users'</strong> reliability ratings (for example, a session you attended alongside someone else) may remain reflected in their history, since that rating belongs to the other user's record, not yours — but it will no longer be linked to your identity once your account is deleted. We do not retain any other data about you after deletion completes. No backups are kept beyond what's required for standard operational recovery windows (typically no more than 30 days), after which all copies are purged.</p>
+
+<div class="contact">
+  <h2>Questions</h2>
+  <p>For anything about this process, contact <a href="mailto:tripexsupport@gmail.com"><strong>tripexsupport@gmail.com</strong></a>. See also our full <a href="index.html">Privacy Policy</a>.</p>
+</div>
+
+</body>
+</html>
