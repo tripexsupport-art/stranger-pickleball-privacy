@@ -11,9 +11,10 @@
       --muted:  #6B7280;
       --sub:    #F9FAFB;
       --border: #E5E7EB;
+      --background: #ffffff;
     }
     @media (prefers-color-scheme: dark) {
-      :root { --text:#F3F4F6; --muted:#9CA3AF; --sub:#1F2937; --border:#374151; }
+      :root { --text:#F3F4F6; --muted:#9CA3AF; --sub:#1F2937; --border:#374151; --background:#111827; }
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -22,7 +23,7 @@
       font-size: 16px;
       line-height: 1.75;
       color: var(--text);
-      background: #ffffff;
+      background: var(--background);
       max-width: 700px;
       margin: 0 auto;
       padding: 52px 24px 96px;
@@ -114,7 +115,7 @@
 </div>
 
 <h1>Privacy Policy</h1>
-<span class="updated">Last updated: 12 August 2026</span>
+<span class="updated">Last updated: 20 October 2026</span>
 
 <p>Stranger Pickleball is a matchmaking app that lets hosts post open pickleball sessions and lets nearby players claim or get invited to open slots. This policy describes what information the app collects, why, and how it is handled.</p>
 
@@ -125,12 +126,12 @@
 <p><strong>Account &amp; profile</strong></p>
 <ul>
   <li>Email address and display name, via Firebase Authentication (email/password or Google Sign-In)</li>
-  <li>Profile details you choose to add: gender/composition preference, skill level, and an optional profile photo</li>
+  <li>Your profile preferences and the profile-photo URL supplied by your Google account, if present. The current app does not provide custom photo uploads.</li>
 </ul>
 
 <p><strong>Location</strong></p>
 <ul>
-  <li>Approximate location (via device GPS, coarse and fine) is used to detect your general area and to show nearby sessions and players. We store a coarse geohash of your area, not a precise continuously-tracked location — location is read when you open the app or create/search a session, not in the background.</li>
+  <li>Foreground location permission can provide a precise GPS position when you choose to set your area or a game's location. Your player profile stores a coarse area geohash. A posted game includes its venue text and coordinates, visible to signed-in players. We do not continuously track location or request background-location access.</li>
 </ul>
 
 <p><strong>Session &amp; activity data</strong></p>
@@ -143,11 +144,17 @@
 <p><strong>Device &amp; notifications</strong></p>
 <ul>
   <li>A push-notification token (Firebase Cloud Messaging) so we can notify you of invitations and session updates</li>
+  <li>Crash and diagnostic reports through Firebase Crashlytics to investigate failures and improve reliability</li>
+</ul>
+<p><strong>Subscription and usage records</strong></p>
+<ul>
+  <li>Google Play purchase tokens, the subscription product, verification state and expiry, and a pseudonymous account identifier used to bind a purchase to your player account</li>
+  <li>Hosting, invitation and search records used to enforce your plan's limits and prevent duplicate or abusive operations</li>
 </ul>
 
 <h2>2 · What We Do Not Collect</h2>
 <ul>
-  <li>Payment card details — the app does not process payments; any session cost is settled directly between players and hosts, outside the app</li>
+  <li>Payment card or bank details: Google Play handles optional subscription payments. We receive purchase-verification information, not your card number. Court/session costs are still settled directly between players and hosts outside the app.</li>
   <li>Precise continuous background location tracking</li>
   <li>Skill-based ratings or performance scores — reliability ratings are based only on attendance facts (hosted / completed / no-show)</li>
 </ul>
@@ -155,28 +162,34 @@
 <h2>3 · How Your Data Is Used</h2>
 <ul>
   <li>To match you with nearby sessions and players, and to operate the claim/invite workflow</li>
-  <li>To calculate and display reliability ratings. These counters are written only by server-side Cloud Functions — never directly by any user's device — to keep them trustworthy</li>
+  <li>To calculate and display reliability ratings. These counters are written only by trusted server code — never directly by any user's device — to keep them trustworthy</li>
   <li>To send you push notifications about invitations, claims, and session changes</li>
 </ul>
 
-<h2>4 · Advertising &amp; Monetization</h2>
-<p>Stranger Pickleball is free to use. Advertising and an optional ad-free subscription are planned but <strong>not yet active</strong> in the current release. This policy will be updated with details of the advertising provider (Google AdMob) and billing provider (Google Play Billing) before either is enabled, and the "Last updated" date above will change accordingly.</p>
+<h2>4 · Advertising &amp; Subscriptions</h2>
+<p>In releases where advertising is enabled, free users may see a Google AdMob banner on the discovery screen. The app requests non-personalized advertisements. Google's SDK can still collect or share an IP address (which can indicate a general location), device/account identifiers, ad and app interactions, and diagnostic information for advertising, measurement and fraud prevention. Non-personalized does not mean no data collection.</p>
+<p>Where required, Google's User Messaging Platform presents privacy choices before advertisements can be requested. An Ad privacy choices action is available when required. Declining consent, an unavailable advertisement or a connection failure does not prevent core game, safety or account actions. You can also manage your advertising identifier in Android settings.</p>
+<p>Where offered, Stranger Plus is an optional monthly Google Play subscription with higher hosting, invitation and search allowances and no displayed advertisements while the subscription is verified and active. Its price and renewal terms appear before checkout. You can restore purchases or manage/cancel the subscription in Google Play. See the <a href="terms.html">subscription terms</a>. Development builds use test ads and can have checkout disabled; availability is shown in the app.</p>
 
 <h2>5 · Third-Party Services</h2>
 <p>The app integrates the following third-party services, each governed by its own privacy policy:</p>
 <ul>
-  <li><strong>Firebase</strong> (Authentication, Firestore database, Cloud Functions, Cloud Messaging) — <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></li>
+  <li><strong>Firebase</strong> (Authentication, Firestore, Cloud Messaging and Crashlytics) — <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></li>
+  <li><strong>Cloudflare Workers</strong> — our server processes authenticated requests, player and game information, invitation notification delivery, usage limits and Google Play verification records. Request processing includes network information such as IP addresses. Purchase tokens and private player fields are not exposed to other players. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare privacy policy</a></li>
   <li><strong>Google Sign-In</strong> — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+  <li><strong>Google AdMob and User Messaging Platform</strong> — <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google advertising privacy</a></li>
+  <li><strong>Google Play Billing</strong> — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google privacy policy</a></li>
 </ul>
 
 <h2>6 · Data Sharing Between Users</h2>
-<p>Your display name, profile photo, composition/skill info, and reliability rating are visible to other users you interact with through sessions and invitations — this is core to how the app works. We do not sell your data or share it with third parties for advertising purposes.</p>
+<p>Your shared profile (display name, photo, gender, badges and reliability facts) and posted game details can be shown to signed-in players through discovery, games and invitations. Private email addresses, block lists, push tokens and purchase tokens are not part of public player profiles. Advertising data is handled by Google as described in Section 4; we do not send purchase tokens or private block lists to AdMob.</p>
 
 <h2>7 · Data Retention &amp; Deletion</h2>
-<p>Your account and associated data are retained while your account is active. You can request deletion of your account and all associated data at any time by contacting us using the details in Section 9; we will complete deletion within 30 days.</p>
+<p>Your account and associated data are retained while your account is active. You can request deletion of your account and associated data using the contact details below; we aim to complete eligible deletion requests within 30 days, subject to any required retention described below.</p>
+<p>Use Request account deletion in the app or the <a href="delete-account.html">deletion request page</a>. Limited purchase, fraud-prevention or legally required records may need to be retained for those purposes. We do not automatically erase records when a subscription ends. Deleting an account does not cancel a Google Play subscription: cancel future renewals in Google Play separately. Google controls retention of records held in its own services under its policies.</p>
 
 <h2>8 · Data Security</h2>
-<p>Data is stored in Google Firebase (Firestore) and protected by security rules that restrict reads/writes to authorized users. Reliability counters are protected against direct client modification and can only be updated by trusted server-side Cloud Functions.</p>
+<p>App records are stored in Google Firebase (Firestore). Client access is protected by security rules; trusted Cloudflare server requests use restricted server credentials and authenticate the player before carrying out an authorized action. Reliability and subscription records are protected against direct client modification. Server credentials are never included in the Android app.</p>
 
 <h2>9 · Changes to This Policy</h2>
 <p>We may revise this policy from time to time. The current version is always available at this URL. Material changes will be noted by updating the date at the top of the page.</p>
